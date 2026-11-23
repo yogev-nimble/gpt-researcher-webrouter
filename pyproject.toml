@@ -36,9 +36,9 @@ webrouter = "gpt_researcher_webrouter:WebRouterSearch"
 
 [project.urls]
 Homepage = "https://docs.webrouter.net"
-Documentation = "https://github.com/Nimbleway/gpt-researcher-webrouter#readme"
-Repository = "https://github.com/Nimbleway/gpt-researcher-webrouter"
-Issues = "https://github.com/Nimbleway/gpt-researcher-webrouter/issues"
+Documentation = "https://github.com/yogev-nimble/gpt-researcher-webrouter#readme"
+Repository = "https://github.com/yogev-nimble/gpt-researcher-webrouter"
+Issues = "https://github.com/yogev-nimble/gpt-researcher-webrouter/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["gpt_researcher_webrouter"]
