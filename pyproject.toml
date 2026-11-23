@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gpt-researcher-webrouter"
+version = "0.1.0"
+description = "GPT Researcher retriever plugin for WebRouter: keyless web search, routed across providers."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Nimble" },
+]
+keywords = ["gpt-researcher", "webrouter", "retriever", "web-search", "research", "agents"]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+  "Typing :: Typed",
+]
+dependencies = [
+  "webrouter[search]>=0.14,<1",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.3",
+  "ruff>=0.8,<1",
+]
+
+[project.entry-points."gpt_researcher.retrievers"]
+webrouter = "gpt_researcher_webrouter:WebRouterSearch"
+
+[project.urls]
+Homepage = "https://docs.webrouter.net"
+Documentation = "https://github.com/Nimbleway/gpt-researcher-webrouter#readme"
+Repository = "https://github.com/Nimbleway/gpt-researcher-webrouter"
+Issues = "https://github.com/Nimbleway/gpt-researcher-webrouter/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["gpt_researcher_webrouter"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/gpt_researcher_webrouter", "/tests", "/LICENSE", "/README.md", "/pyproject.toml"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
