@@ -8,3 +8,4 @@ dist/
 .ruff_cache/
 .env
 .DS_Store
+uv.lock
